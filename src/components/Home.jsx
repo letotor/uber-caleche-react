@@ -5,7 +5,6 @@ const Home = () => {
   return (
     <div>
       <img className='object-cover w-full' src={map} alt="map" />
-      
     </div>
   );
 };
