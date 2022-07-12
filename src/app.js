@@ -1,9 +1,9 @@
 import React from 'react';
-
-const App = (props) => {
+import Footer from './components/Footer'
+const App = () => {
   return (
     <div>
-      <button className="btn">Hello daisyUI</button>
+      
     </div>
   );
 };
