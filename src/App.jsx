@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import { Routes, Route } from 'react-router-dom'
 import Login from './components/Login';
+import Selector from './components/Selector'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           path='/login'
           element={<Login />}
         />  
+         <Route path='/selector' element={<Selector />} /> 
       </Routes> 
         <Footer />
       
