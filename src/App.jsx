@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom'
 import Login from './components/Login';
 import Profile from './components/Profile';
 import Contact from './components/Contact';
+import Selector from './components/Selector'
 
 const App = () => {
   return (
@@ -20,6 +21,8 @@ const App = () => {
         />
         <Route path='/profile' element={<Profile />} />
         <Route path='/contact' element={<Contact />} />
+         
+         <Route path='/selector' element={<Selector />} /> 
       </Routes> 
         <Footer />
       
