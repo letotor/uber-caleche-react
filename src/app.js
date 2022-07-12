@@ -5,7 +5,7 @@ import Home from './components/Home';
 
 const app = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-between w-full h-screen max-w-full max-h-screen">
       <Header />
       <Home />
       <Footer />
