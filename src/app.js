@@ -1,10 +1,16 @@
 import React from 'react';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Home from './components/Home';
 
-const App = (props) => {
+const app = () => {
   return (
     <div>
-      <button className="btn">Hello daisyUI</button>
+      <Header />
+      <Home />
+      <Footer />
     </div>
   );
 };
-export default App;
+
+export default app;
