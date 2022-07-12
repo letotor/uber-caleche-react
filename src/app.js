@@ -1,8 +1,9 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Account from "./components/Account";
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
-import { Routes, Route } from 'react-router-dom'
 import Login from './components/Login';
 
 const App = () => {
@@ -10,12 +11,12 @@ const App = () => {
     <div>
       <Header />
       <Routes>
-        
         <Route path='/' element={<Home />}  />
          <Route
           path='/login'
           element={<Login />}
-        />  
+        />
+        <Route path="/account" element={<Account />} />
       </Routes> 
         <Footer />
       
