@@ -7,7 +7,6 @@ const Header = () => {
   let navigate = useNavigate();
 
   const handleLogout = () => {
-    console.log('logou handle');
     setUserInfo({
       ...userInfo,
       id: '',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import IsOrder from './IsOrder';
 import NotOrder from './NotOrder';
 
@@ -7,6 +7,10 @@ const Home = () => {
   const [end, setEnd] = useState('');
   const [isOrder, setIsOrder] = useState(false);
   const [value, setValue] = useState('');
+
+  useEffect(() => {
+    isOrder === false ? (setValue(''), setEnd(''), setStart('')) : null;
+  }, [isOrder]);
 
   return (
     <>
@@ -23,6 +27,7 @@ const Home = () => {
           setStart={setStart}
           setEnd={setEnd}
           setValue={setValue}
+          itsOk={value && start && end}
         />
       )}
     </>
