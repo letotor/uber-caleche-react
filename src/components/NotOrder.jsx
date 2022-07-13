@@ -3,7 +3,7 @@ import map from '../assets/map.png';
 import Inputor from './Inputor';
 import Selector from './Selector';
 
-const NotOrder = ({ setIsOrder, setStart, setEnd, setValue }) => {
+const NotOrder = ({ setIsOrder, setStart, setEnd, setValue, itsOk }) => {
   return (
     <div
       style={{ backgroundImage: `url(${map})`, height: 'calc(100vh - 96px)' }}
@@ -15,6 +15,7 @@ const NotOrder = ({ setIsOrder, setStart, setEnd, setValue }) => {
         <Inputor text="End" state={setEnd} />
         <button
           className="mt-8 btn btn-primary"
+          disabled={!itsOk && 'disabled'}
           onClick={() => setIsOrder(true)}
         >
           Go order

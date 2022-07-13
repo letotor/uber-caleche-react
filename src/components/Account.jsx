@@ -1,16 +1,14 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import UserContext from '../contexts/UserContext';
 import Footer from './Footer';
 
 const Account = () => {
   const { userInfo, setUserInfo } = useContext(UserContext);
-  useEffect(() => {
-    console.log('account info', userInfo);
-  }, [userInfo]);
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="mt-8 text-2xl text-slate-500 ">Welcome to your profile</h1>
+      <h1 className="mt-8 text-2xl font-bold">Welcome to your profile</h1>
       <div className="mt-8 avatar">
         <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
           {userInfo.isConnected && <img src={userInfo.avatar} />}
@@ -46,7 +44,9 @@ const Account = () => {
           </div>
         </div>
       </div>
-      <button className="mt-4 btn btn-outline">Other orders</button>
+      <Link to="/orderslist" className="mt-4 btn btn-outline">
+        Other orders
+      </Link>
 
       <Footer />
     </div>
