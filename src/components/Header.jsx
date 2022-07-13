@@ -17,9 +17,7 @@ const Header = () => {
             <div className="">Login</div>
           </button>
         </Link>
-        {/* <a className="text-xl normal-case btn btn-ghost">UBER Calèche</a> */}
       </div>
-      {/* <div className="navbar-end"></div> */}
     </div>
   );
 };
