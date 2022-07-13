@@ -12,7 +12,7 @@ import Services from './components/Services';
 
 const App = () => {
   return (
-    <div>
+    <div className="h-screen">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
