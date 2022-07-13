@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import Selector from './components/Selector';
+import Services from './components/Services';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/selector" element={<Selector />} />
+        <Route path='/services' element={<Services />}  />
       </Routes>
       <Footer />
     </div>
