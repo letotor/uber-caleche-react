@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import Contact from './components/Contact';
 import Selector from './components/Selector'
+import Available from './components/Available';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
          
          <Route path='/selector' element={<Selector />} /> 
+         <Route path='/available' element={<Available />} /> 
       </Routes> 
         <Footer />
       
