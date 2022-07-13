@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
 import Login from './components/Login';
+import OrdersList from './components/OrdersList';
 import Selector from './components/Selector';
 import Services from './components/Services';
 import UserContext from './contexts/UserContext';
@@ -38,10 +39,10 @@ const App = () => {
         <Route path="/available" element={<Available />} />
         <Route path="/account" element={<Account />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/orderslist" element={<OrdersList />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
-      {console.log('userinfo app', userInfo)}
     </UserContext.Provider>
   );
 };

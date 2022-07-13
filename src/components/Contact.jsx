@@ -18,7 +18,6 @@ const Contact = () => {
 
   function sendEmail(e) {
     e.preventDefault();
-    console.log(message.length);
     if (message.length !== 0) {
       console.log('sendEmail');
       emailjs
@@ -53,7 +52,7 @@ const Contact = () => {
         <div className="flex items-center justify-center w-full mb-3 mt-36 form-control">
           <h2 className="mb-4 text-2xl font-bold">Contact us</h2>
           <textarea
-            className="w-full h-48 textarea textarea-bordered"
+            className="w-full max-w-3xl h-48 textarea textarea-bordered"
             placeholder="Enter your message"
             message="message"
             name="message"
