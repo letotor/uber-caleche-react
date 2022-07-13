@@ -6,7 +6,7 @@ import Selector from './Selector';
 const NotOrder = ({ setIsOrder, setStart, setEnd }) => {
   return (
     <div
-      style={{ backgroundImage: `url(${map})`, height: 'calc(100% - 96px)' }}
+      style={{ backgroundImage: `url(${map})`, height: 'calc(100vh - 96px)' }}
       className="bg-cover"
     >
       <div className="flex flex-col items-center w-full gap-2 p-4 font-sans component-preview">
