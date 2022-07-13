@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import UserContext from '../contexts/UserContext';
 
 const Header = () => {
+  const { userInfo, setUserInfo } = useContext(UserContext);
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start"></div>
