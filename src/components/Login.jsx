@@ -1,11 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-import { data } from 'autoprefixer'
-// const DIRECTUS_API_TOKEN = '' || process.env.REACT_APP_NODE_URL
+import LoadingSpinner from './LoadingSpinner'
+import UserContext from '../contexts/UserContext'
 
+import { data } from 'autoprefixer'
+import { useNavigate } from 'react-router-dom'
+// const DIRECTUS_API_TOKEN = '' || process.env.REACT_APP_NODE_URL
 
 const API_NODE = 'http://localhost:3001/api/user'
 const Login = () => {
+    const { userInfo, setUserInfo } = useContext(UserContext)
+
+    let navigate = useNavigate();
+
     const [isLoading, setIsLoading] = useState(false)
     const [isConnected, setIsConnected] = useState(false)
     const [error, setError] = useState(false)
@@ -32,10 +39,23 @@ const Login = () => {
         try {
             const res = await axios.get(urlEmailFilter)
             const data = res.data;
-            console.log('data', data)
+            console.log('data login', data)
             setUser(data?.[0])
-            setIsConnected(data.length>0 ? true : false)
-
+            /*** MAJ du userContext */
+            setUserInfo({
+                ...userInfo,
+                isConnected:true,
+                avatar: data?.[0].avatar,
+                email: data?.[0].email,
+                firstname: data?.[0].firstname,
+                lastname: data?.[0].lastname,
+                password: data?.[0].password,
+                city: data?.[0].city
+            })
+            
+            setIsConnected(data?.length>0 ? true : false)
+            setTimeout(async ()=>
+               await navigate("/account", { replace: true }),1000)
             console.log(res);
         } catch (err) {
             if (err.response) {
@@ -64,13 +84,13 @@ const Login = () => {
     }
 
     const handleChangeMail = (e) => {
-        console.log('email')
+        console.log('email', e.target.value)
         setEmail(e.target.value)
     }
 
     const handleChangePassword = (e) => {
 
-        console.log('password')
+        console.log('password', e.target.value)
         setPassword(e.target.value)
     }
 
@@ -115,15 +135,19 @@ const Login = () => {
                                 {!isConnected ?
                                     <button className="btn btn-primary" id="login">Login</button>
                                     :
-                                    <button className="btn btn-primary " onClick={handleLogout} id="logout">Logout</button>
+                                   
+                            < button className="btn btn-primary  react-icons/fa" onClick={handleLogout} id="logout">Logout</button>
+                                    
+                                
                                 }
                             </div>
                         </form>
                         <label className="flex flex-col label text-center ">
-                            {isLoading && <p>...</p>}
+                            {isLoading && <LoadingSpinner className='error' />}
+                            {isConnected && `${user?.firstname}, you re connected with success`}
                             {error && <p>{error.message}</p>}
-                            {console.log('userTESt', { user })}
-                            {isConnected && `${user?.firstname} you re connected with succes`}
+                            {console.log('userTESt', { user})}
+                          
                         </label>
                     </div>
                 </div>
