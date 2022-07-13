@@ -6,13 +6,24 @@ const Home = () => {
   const [start, setStart] = useState('');
   const [end, setEnd] = useState('');
   const [isOrder, setIsOrder] = useState(false);
-  console.log(isOrder);
+  const [value, setValue] = useState('');
+
   return (
     <>
       {isOrder ? (
-        <IsOrder setIsOrder={setIsOrder} start={start} end={end} />
+        <IsOrder
+          setIsOrder={setIsOrder}
+          start={start}
+          end={end}
+          value={value}
+        />
       ) : (
-        <NotOrder setIsOrder={setIsOrder} setStart={setStart} setEnd={setEnd} />
+        <NotOrder
+          setIsOrder={setIsOrder}
+          setStart={setStart}
+          setEnd={setEnd}
+          setValue={setValue}
+        />
       )}
     </>
   );
