@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IsOrder = ({ setIsOrder, start, end }) => {
+const IsOrder = ({ setIsOrder, start, end, value }) => {
   return (
     <div
       style={{ height: 'calc(100vh - 96px)' }}
@@ -10,9 +10,16 @@ const IsOrder = ({ setIsOrder, start, end }) => {
       <h3 className="mb-4 text-xs capitalize">
         abdou <span className="uppercase">kerkeb</span>
       </h3>
-      <div className="avatar">
-        <div className="w-24 rounded-full">
-          <img src="https://raw.githubusercontent.com/MoreauJonas/LordOfPing/main/assets/img/Abdou.png" />
+      <div className="indicator">
+        <span className="p-1 indicator-item badge badge-secondary leading box-content rounded-full m-3">
+          {value}
+        </span>
+        <div className="grid w-24 h-24 rounded-full bg-base-300 place-items-center">
+          <div className="avatar">
+            <div className="w-full rounded-full">
+              <img src="https://raw.githubusercontent.com/MoreauJonas/LordOfPing/main/assets/img/Abdou.png" />
+            </div>
+          </div>
         </div>
       </div>
       <div className="mt-8 stats bg-primary text-primary-content">
