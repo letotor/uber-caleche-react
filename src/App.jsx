@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Account from './components/Account';
 import Available from './components/Available';
@@ -10,9 +10,26 @@ import Login from './components/Login';
 import Selector from './components/Selector';
 import Services from './components/Services';
 
+import UserContext from './contexts/UserContext'
+
+
 const App = () => {
+  const [userInfo, setUserInfo] = useState({
+    id: '',
+    isConnected:false,
+    email: '',
+    lastname:'',
+    firstname:'',
+    avatar: '',
+    password:'',
+    city:''
+  })
+
+  
   return (
-    <div className="h-screen">
+    <UserContext.Provider
+      value={{ userInfo: userInfo, setUserInfo: setUserInfo }}
+    >
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,11 +37,17 @@ const App = () => {
         <Route path="/account" element={<Account />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/selector" element={<Selector />} />
+
+        <Route path='/available' element={<Available />} /> 
+        <Route path='/account' element={<Account />} /> 
+
         <Route path="/services" element={<Services />} />
-        <Route path="/available" element={<Available />} />
+ 
+
       </Routes>
       <Footer />
-    </div>
+      {console.log('userinfo app', userInfo)}
+    </UserContext.Provider>
   );
 };
 
