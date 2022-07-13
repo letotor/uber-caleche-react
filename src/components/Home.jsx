@@ -1,16 +1,21 @@
 import React from 'react';
+import map from '../assets/map.png'
+import Selector from './Selector'
 
 const Home = () => {
   return (
-    <div className='flex items-center justify-center h-full mr-4'>
-      <p>Map</p>
+    <>
+    <div>
+      <img className='object-cover w-full' src={map} alt="map" />
     </div>
-  // </div>
-
-
-    //   <p>Map</p>
-    // </div>
+    <div>
+       <Selector/> 
+    </div>
+    </>
   );
 };
+
+
+
 
 export default Home;
