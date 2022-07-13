@@ -9,6 +9,8 @@ import Profile from './components/Profile';
 import Selector from './components/Selector'
 import Available from './components/Available';
 import Services from './components/Services';
+import Account from './components/Account';
+
 
 const App = () => {
   return (
@@ -22,6 +24,7 @@ const App = () => {
         <Route path="/selector" element={<Selector />} />
         <Route path='/services' element={<Services />}  />
         <Route path='/available' element={<Available />} /> 
+        <Route path="/account" element={<Account/>} />
       </Routes>
       <Footer />
     </div>
