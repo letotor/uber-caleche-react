@@ -3,7 +3,7 @@ module.exports = {
   plugins: [require("daisyui")],
   daisyui: {
     styled: true,
-    themes: ["black"], // lofi
+    themes: ["lofi"],
     base: true,
     utils: true,
     logs: true,
