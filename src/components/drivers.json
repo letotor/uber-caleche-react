@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "name": "Jacky",
+      "description": "Avec son fidéle destrier Michel, Il vous propose une course aussi rapide qu’un pet de mouche!",
+      "image": "driver1.jpg",
+      "rating": 3.5
+    },
+    {
+        "id": 2,
+        "name": "Alphonse",
+        "description": "Pas de détour avec Alph, une course de qualité et pas chère... Fouette cochet !",
+        "image": "driver2.jpg",
+        "rating": 4.3
+    },
+    {
+        "id": 3,
+        "name": "Léonce",
+        "description": "Peut-être pas le plus rapide, mais Léonce vous promet un voyage confortable.",
+        "image": "driver3.jpg",
+        "rating": 4.0
+    }
+]

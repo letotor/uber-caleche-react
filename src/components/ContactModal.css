@@ -1,0 +1,83 @@
+ .myoverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(208, 211, 211, 0.75);
+  }
+  
+  .ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+  
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+  }
+  
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
+  }
+
+    .modal-button-denied{
+    background-color: white;
+    margin-right: 0;
+    color: rgb(182, 9, 9);
+    align-self: flex-end;
+    text-transform: uppercase;
+    letter-spacing: .09em;  
+    padding: 8px 16px;
+    border: none;  
+  }
+
+  .mymodal_denied {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    background: rgb(182, 9, 9);
+    outline: none;
+    border: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    letter-spacing: .09em;
+    padding: 8px 16px;
+  }
+
+    .mymodal_contact {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    background: white;
+    outline: none;
+    border: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    letter-spacing: .09em;
+    padding: 8px 16px;
+  }
+
+    .modal-button-contact{
+    background-color: black;
+    margin-right: 0;
+    color: white;
+    align-self: flex-end;
+    text-transform: uppercase;
+    letter-spacing: .09em;  
+    padding: 8px 16px;
+    border: none;  
+  }
+  
+
+.modal-button-contact
+.modal-button-denied:active {
+    transform: translate(2px, 2px);
+  }
